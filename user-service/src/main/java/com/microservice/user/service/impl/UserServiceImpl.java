@@ -39,7 +39,35 @@ public class UserServiceImpl implements IUserService {
 	@Override
 	public List<User> getAllUser() {
 		LOGGER.info("Inside getAllUser method in UserServiceImpl started");
-		return userDao.findAll();
+		List<User> allUsers = userDao.findAll();
+
+		return allUsers.stream().map(user -> {
+			// Calling Rating-Service by using RestTemplate to get Ratings of User
+			LOGGER.info(
+					"Inside getAllUser method in UserServiceImpl started Calling Rating-Service by using RestTemplate to get Ratings of User with userId : {}",
+					user.getUserId());
+			Rating[] ratingOfUser = restTemplate.getForObject(
+					IConstants.RATING_SERVICE_URL + "/getRatingByUserId/" + user.getUserId(), Rating[].class);
+
+			List<Rating> ratings = Arrays.asList(ratingOfUser);
+			List<Rating> ratingsWithHotel = ratings.stream().map(rating -> {
+
+				// Calling Hotel-Service by using RestTemplate to get Hotels which get the
+				// ratings
+				LOGGER.info(
+						"Inside getAllUser method in UserServiceImpl started Hotel-Service by using RestTemplate to get Hotels which get the ratings with hotelId : {}",
+						rating.getHotelId());
+				ResponseEntity<Hotel> hotelEntity = restTemplate.getForEntity(
+						IConstants.HOTEL_SERVICE_URL + "/getHotelById/" + rating.getHotelId(), Hotel.class);
+				Hotel hotel = hotelEntity.getBody();
+				rating.setHotel(hotel);
+				return rating;
+			}).collect(Collectors.toList());
+
+			user.setRatings(ratingsWithHotel);
+			return user;
+		}).collect(Collectors.toList());
+
 	}
 
 	@Override
