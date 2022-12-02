@@ -72,9 +72,18 @@ public class User {
 		this.about = about;
 	}
 
+	public List<Rating> getRatings() {
+		return ratings;
+	}
+
+	public void setRatings(List<Rating> ratings) {
+		this.ratings = ratings;
+	}
+
 	@Override
 	public String toString() {
-		return "User [userId=" + userId + ", name=" + name + ", email=" + email + ", about=" + about + "]";
+		return "User [userId=" + userId + ", name=" + name + ", email=" + email + ", about=" + about + ", ratings="
+				+ ratings + "]";
 	}
 
 }

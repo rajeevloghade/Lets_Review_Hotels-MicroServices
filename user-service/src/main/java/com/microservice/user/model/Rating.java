@@ -6,6 +6,7 @@ public class Rating {
 	private String userId;
 	private String hotelId;
 	private String feedback;
+	private Hotel hotel;
 
 	public Rating() {
 		super();
@@ -17,6 +18,14 @@ public class Rating {
 		this.userId = userId;
 		this.hotelId = hotelId;
 		this.feedback = feedback;
+	}
+
+	public Hotel getHotel() {
+		return hotel;
+	}
+
+	public void setHotel(Hotel hotel) {
+		this.hotel = hotel;
 	}
 
 	public String getRatingId() {
@@ -54,7 +63,7 @@ public class Rating {
 	@Override
 	public String toString() {
 		return "Rating [ratingId=" + ratingId + ", userId=" + userId + ", hotelId=" + hotelId + ", feedback=" + feedback
-				+ "]";
+				+ ", hotel=" + hotel + "]";
 	}
 
 }
