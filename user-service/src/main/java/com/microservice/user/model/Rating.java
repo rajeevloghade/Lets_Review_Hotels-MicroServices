@@ -6,18 +6,28 @@ public class Rating {
 	private String userId;
 	private String hotelId;
 	private String feedback;
+	private String rating;
 	private Hotel hotel;
 
 	public Rating() {
 		super();
 	}
 
-	public Rating(String ratingId, String userId, String hotelId, String feedback) {
+	public Rating(String ratingId, String userId, String hotelId, String feedback, String rating) {
 		super();
 		this.ratingId = ratingId;
 		this.userId = userId;
 		this.hotelId = hotelId;
 		this.feedback = feedback;
+		this.rating = rating;
+	}
+
+	public String getRating() {
+		return rating;
+	}
+
+	public void setRating(String rating) {
+		this.rating = rating;
 	}
 
 	public Hotel getHotel() {
@@ -63,7 +73,7 @@ public class Rating {
 	@Override
 	public String toString() {
 		return "Rating [ratingId=" + ratingId + ", userId=" + userId + ", hotelId=" + hotelId + ", feedback=" + feedback
-				+ ", hotel=" + hotel + "]";
+				+ ", rating=" + rating + ", hotel=" + hotel + "]";
 	}
 
 }
