@@ -17,6 +17,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.microservice.user.entities.User;
 import com.microservice.user.service.IUserService;
 
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import io.github.resilience4j.retry.annotation.Retry;
+
 @RestController
 @RequestMapping("api/user")
 public class UserController {
@@ -32,9 +35,26 @@ public class UserController {
 	}
 
 	@GetMapping("getUserById/{userId}")
+//	@CircuitBreaker(name = "userRatingHotelService", fallbackMethod = "userRatingHotelFallback")
+	@Retry(name = "userRatingHotelService", fallbackMethod = "userRatingHotelFallback")
 	public ResponseEntity<User> getUserById(@PathVariable String userId) {
 		LOGGER.info("Inside getUserById method in UserController started with userId : {}", userId);
+		LOGGER.info("retryCount : {}", retryCount);
+		retryCount++;
 		return ResponseEntity.ok(userService.getUserById(userId));
+	}
+
+	int retryCount = 1;
+
+	/**
+	 * userRatingHotelFallback for CircuitBreaker
+	 */
+	public ResponseEntity<User> userRatingHotelFallback(String userId, Exception exception) {
+		LOGGER.info("Inside userRatingHotelFallback method in UserController started with userId : {}",
+				exception.getMessage());
+		return new ResponseEntity<>(
+				new User("1", "DummyName", "dummy123@gmail.com", "Dummy user created bcoz service was down"),
+				HttpStatus.OK);
 	}
 
 	@GetMapping("getAllUsers")

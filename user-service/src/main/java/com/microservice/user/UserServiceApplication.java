@@ -16,7 +16,7 @@ public class UserServiceApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(UserServiceApplication.class, args);
-		LOGGER.info("Spring Boot Application Started...!!!");
+		LOGGER.info("USER SERVICE Application Started...!!!");
 	}
 
 }
