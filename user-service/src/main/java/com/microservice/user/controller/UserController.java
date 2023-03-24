@@ -35,7 +35,7 @@ public class UserController {
 		return ResponseEntity.status(HttpStatus.CREATED).body(userService.saveUser(user));
 	}
 
-	@GetMapping("getUserById/{userId}")
+	@GetMapping(path = "getUserById/{userId}",produces = "application/json")
 	@CircuitBreaker(name = "userRatingHotelService", fallbackMethod = "userRatingHotelFallback")
 //	@Retry(name = "userRatingHotelService", fallbackMethod = "userRatingHotelFallback")
 //	@RateLimiter(name = "userRatingHotelService", fallbackMethod = "userRatingHotelFallback")
