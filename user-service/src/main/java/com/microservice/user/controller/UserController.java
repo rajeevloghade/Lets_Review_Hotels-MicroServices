@@ -36,9 +36,9 @@ public class UserController {
 	}
 
 	@GetMapping("getUserById/{userId}")
-//	@CircuitBreaker(name = "userRatingHotelService", fallbackMethod = "userRatingHotelFallback")
+	@CircuitBreaker(name = "userRatingHotelService", fallbackMethod = "userRatingHotelFallback")
 //	@Retry(name = "userRatingHotelService", fallbackMethod = "userRatingHotelFallback")
-	@RateLimiter(name = "userRatingHotelService", fallbackMethod = "userRatingHotelFallback")
+//	@RateLimiter(name = "userRatingHotelService", fallbackMethod = "userRatingHotelFallback")
 	public ResponseEntity<User> getUserById(@PathVariable String userId) {
 		LOGGER.info("Inside getUserById method in UserController started with userId : {}", userId);
 		LOGGER.info("retryCount : {}", retryCount);
