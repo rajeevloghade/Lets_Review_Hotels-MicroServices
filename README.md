@@ -1,8 +1,8 @@
-#Project Name
+# Project Name
 
 Let's Review Hotels
 
-#Installation
+# Installation
 
 for installation of this project in your system 
 
@@ -10,16 +10,16 @@ for installation of this project in your system
 
 	git checkout "https://github.com/rajeevloghade/Lets_Review_Hotels-Microservices.git"
 
-#Usage
+# Usage
 
 2. Import it in eclipce/Intellij and do update all project modules by maven update
 
 3. To run the project. 
 
-		A. First run centralized-config-server then service-discovery then api-gateway service and then rest of the services
+   First run centralized-config-server then service-discovery then api-gateway service and then rest of the services
 
 
-#Microservice Concepts used in Let's Review Hotels : 
+# Microservice Concepts used in Let's Review Hotels : 
 
 Service Discovery.
 
@@ -27,10 +27,10 @@ Feign Client.
 
 API Gateway is responsible for several tasks, including:
 
-	Authentication and authorization
-	Load balancing
-	Request routing
-	Caching
+    *Authentication and authorization
+    *Load balancing
+    *Request routing
+    *Caching
 
 Config Server (For centralized/externalized configuration) 
 
@@ -40,7 +40,7 @@ Okta for authentcation and authorization.
 
 Feign Client/RestTemplate Interceptors.
 
-#Project Description
+# Project Description
 
 The Let's Review Hotels project is an excellent example of how microservices architecture can be used to build a scalable and maintainable application. By using different microservices for specific responsibilities, such as user management, hotel rating, and hotel information, the application can be more modular and easier to maintain.
 
