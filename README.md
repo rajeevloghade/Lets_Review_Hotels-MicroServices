@@ -51,3 +51,7 @@ Circuit Breaker, which is implemented using Resilience4j, is used to handle faul
 Okta, a third-party tool, is used for authentication and authorization to secure APIs. Feign Client Interceptors hold requests and add an auth token to the header before redirecting to the relevant service.
 
 Overall, the Let's Review Hotels project provides a practical example of how to build microservices-based applications, and it can serve as a useful reference for developers who are new to microservices architecture.
+
+# Future Enhancements
+
+We can enhance this project by incorporating various cutting-edge technologies, such as Docker, Kubernetes, Kafka, and AWS.
