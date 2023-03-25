@@ -1,0 +1,482 @@
+{
+	"info": {
+		"_postman_id": "dfa503f7-e9eb-4ec6-98a1-269faa962fd5",
+		"name": "Lets Review Hotels",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19094369"
+	},
+	"item": [
+		{
+			"name": "User-Service",
+			"item": [
+				{
+					"name": "Get All Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/user/getAllUsers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"user",
+								"getAllUsers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Rajeev 3\",\r\n    \"email\":\"rajeev3@gmail.com\",\r\n    \"about\":\"This is Rajeev 3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/user/createUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"user",
+								"createUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/user/getUserById/295c9bfa-f57d-4f45-88ff-80ef6b6293c7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"user",
+								"getUserById",
+								"295c9bfa-f57d-4f45-88ff-80ef6b6293c7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Hotel-Service",
+			"item": [
+				{
+					"name": "Get All Hotels",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/hotel/getAllHotels",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"hotel",
+								"getAllHotels"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Hotel Staffs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/hotelStaff/getAllHotelStaffs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"hotelStaff",
+								"getAllHotelStaffs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Hotel",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Hotel 3\",\r\n    \"location\":\"Gurgaon\",\r\n    \"about\":\"This is Hotel 3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/api/hotel/createHotel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"hotel",
+								"createHotel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Hotel By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/hotel/getHotelById/4768c309-52a0-4c37-be72-862074298f9a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"hotel",
+								"getHotelById",
+								"4768c309-52a0-4c37-be72-862074298f9a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Rating-Service",
+			"item": [
+				{
+					"name": "Get All Ratings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/api/rating/getAllRatings",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"rating",
+								"getAllRatings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Rating",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\":\"295c9bfa-f57d-4f45-88ff-80ef6b6293c7\",\r\n    \"hotelId\":\"4768c309-52a0-4c37-be72-862074298f9a\",\r\n    \"rating\":\"8\",\r\n    \"feedback\":\"Good facilities.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/api/rating/createRating",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"rating",
+								"createRating"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Rating By Hotel Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/api/rating/getRatingByHotelId/4768c309-52a0-4c37-be72-862074298f9a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"rating",
+								"getRatingByHotelId",
+								"4768c309-52a0-4c37-be72-862074298f9a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Rating By User Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/api/rating/getRatingByUserId/295c9bfa-f57d-4f45-88ff-80ef6b6293c7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"rating",
+								"getRatingByUserId",
+								"295c9bfa-f57d-4f45-88ff-80ef6b6293c7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Rating By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/api/rating/getRatingById/19742b7c-192a-4d6f-8e82-99def485037b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"rating",
+								"getRatingById",
+								"19742b7c-192a-4d6f-8e82-99def485037b"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "API-Gateway",
+			"item": [
+				{
+					"name": "Api-Gateway : Get All Users",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8085/api/user/getAllUsers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"user",
+								"getAllUsers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Api-Gateway : Get All Hotels",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8085/api/hotel/getAllHotels",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"hotel",
+								"getAllHotels"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Api-Gateway : Get All Ratings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8085/api/rating/getAllRatings",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"rating",
+								"getAllRatings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Api-Gateway : Get All Hotel Staffs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8085/api/hotelStaff/getAllHotelStaffs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"hotelStaff",
+								"getAllHotelStaffs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Api-Gateway : Get User By Id",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8085/api/user/getUserById/295c9bfa-f57d-4f45-88ff-80ef6b6293c7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"user",
+								"getUserById",
+								"295c9bfa-f57d-4f45-88ff-80ef6b6293c7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Api-Gateway : Get Hotel By Id Copy",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8085/api/hotel/getHotelById/4768c309-52a0-4c37-be72-862074298f9a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"hotel",
+								"getHotelById",
+								"4768c309-52a0-4c37-be72-862074298f9a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
