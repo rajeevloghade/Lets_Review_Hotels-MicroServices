@@ -32,7 +32,7 @@ API Gateway is responsible for several tasks, including:
     - Request routing
     - Caching
 
-Config Server (For centralized/externalized configuration) 
+Config Server (For centralized/externalized configuration) (I have used [Git Repository](https://github.com/rajeevloghade/Lets_Review_Hotels-Centralized-Config-Server) for it)
 
 Circuit Breaker (Resillience4j) to handle Fault Tolerance (in which requested service is down). Resillience4j provides us three modules Circuit Breaker , Retry, and RateLimiter.
 
