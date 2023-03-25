@@ -18,8 +18,6 @@ import com.microservice.user.entities.User;
 import com.microservice.user.service.IUserService;
 
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
-import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
-import io.github.resilience4j.retry.annotation.Retry;
 
 @RestController
 @RequestMapping("api/user")
@@ -35,18 +33,14 @@ public class UserController {
 		return ResponseEntity.status(HttpStatus.CREATED).body(userService.saveUser(user));
 	}
 
-	@GetMapping(path = "getUserById/{userId}",produces = "application/json")
+	@GetMapping(path = "getUserById/{userId}", produces = "application/json")
 	@CircuitBreaker(name = "userRatingHotelService", fallbackMethod = "userRatingHotelFallback")
 //	@Retry(name = "userRatingHotelService", fallbackMethod = "userRatingHotelFallback")
 //	@RateLimiter(name = "userRatingHotelService", fallbackMethod = "userRatingHotelFallback")
 	public ResponseEntity<User> getUserById(@PathVariable String userId) {
 		LOGGER.info("Inside getUserById method in UserController started with userId : {}", userId);
-		LOGGER.info("retryCount : {}", retryCount);
-		retryCount++;
 		return ResponseEntity.ok(userService.getUserById(userId));
 	}
-
-	int retryCount = 1;
 
 	/**
 	 * userRatingHotelFallback for CircuitBreaker

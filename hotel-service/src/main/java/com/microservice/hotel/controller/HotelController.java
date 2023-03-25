@@ -7,6 +7,7 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -31,6 +32,7 @@ public class HotelController {
 		return ResponseEntity.status(HttpStatus.CREATED).body(hotelService.saveHotel(hotel));
 	}
 
+	@PreAuthorize("hasAuthority('SCOPE_internal') || hasAuthority('Admin')")
 	@GetMapping("getHotelById/{hotelId}")
 	public ResponseEntity<Hotel> getHotelById(@PathVariable String hotelId) {
 		LOGGER.info("Inside getHotelById method in HotelController started with hotelId : {}", hotelId);
