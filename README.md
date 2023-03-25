@@ -6,15 +6,17 @@ Let's Review Hotels
 
 for installation of this project in your system 
 
-1. Take checkout by using cmd 
+1. You must have Java 8, Maven and Mysql 8 installed in your system.
+
+2. Take checkout by using cmd 
 
 	git checkout "https://github.com/rajeevloghade/Lets_Review_Hotels-Microservices.git"
 
 # Usage
 
-2. Import it in eclipce/Intellij and do update all project modules by maven update
+3. Import it in eclipce/Intellij and do update all project modules by maven update
 
-3. To run the project. 
+4. To run the project. 
 
    First run centralized-config-server then service-discovery then api-gateway service and then rest of the services
 
