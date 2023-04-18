@@ -29,10 +29,10 @@ Feign Client.
 
 API Gateway is responsible for several tasks, including:
 
-    - Authentication and authorization
-    - Load balancing
-    - Request routing
-    - Caching
+- Authentication and authorization
+- Load balancing
+- Request routing
+- Caching
 
 Config Server (For centralized/externalized configuration) (I have used [Git Repository](https://github.com/rajeevloghade/Lets_Review_Hotels-Centralized-Config-Server) for it)
 
