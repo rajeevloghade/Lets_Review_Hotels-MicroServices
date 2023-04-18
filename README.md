@@ -6,7 +6,7 @@ Let's Review Hotels
 
 for installation of this project in your system 
 
-1. You must have Java 8, Maven and Mysql 8 installed in your system.
+1. You must have **Java 8, Maven and Mysql 8** installed in your system.
 
 2. Take checkout by using cmd 
 
@@ -18,29 +18,29 @@ for installation of this project in your system
 
 4. To run the project. 
 
-   First run centralized-config-server then service-discovery then api-gateway service and then rest of the services
+   First run **centralized-config-server** then **service-discovery** then **api-gateway service** and then rest of the services
 
 
 # Microservice Concepts used in Let's Review Hotels : 
 
-Service Discovery.
+**Service Discovery.
 
-Feign Client.
+**Feign Client.
 
-API Gateway is responsible for several tasks, including:
+**API Gateway** is responsible for several tasks, including:
 
 - Authentication and authorization
 - Load balancing
 - Request routing
 - Caching
 
-Config Server (For centralized/externalized configuration) (I have used [Git Repository](https://github.com/rajeevloghade/Lets_Review_Hotels-Centralized-Config-Server) for it)
+**Config Server** (For centralized/externalized configuration) (I have used [Git Repository](https://github.com/rajeevloghade/Lets_Review_Hotels-Centralized-Config-Server) for it)
 
-Circuit Breaker (Resillience4j) to handle Fault Tolerance (in which requested service is down). Resillience4j provides us three modules Circuit Breaker , Retry, and RateLimiter.
+**Circuit Breaker** (Resillience4j) to handle Fault Tolerance (in which requested service is down). Resillience4j provides us three modules Circuit Breaker , Retry, and RateLimiter.
 
-Okta for authentcation and authorization.
+**Okta for authentcation and authorization.
 
-Feign Client/RestTemplate Interceptors.
+**Feign Client/RestTemplate Interceptors.
 
 # Project Description
 
@@ -56,4 +56,4 @@ Overall, the Let's Review Hotels project provides a practical example of how to 
 
 # Future Enhancements
 
-We can enhance this project by incorporating various cutting-edge technologies, such as Docker, Kubernetes, Kafka, and AWS.
+We can enhance this project by incorporating various cutting-edge technologies, such as **Docker, Kubernetes, Kafka, and AWS.
