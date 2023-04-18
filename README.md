@@ -23,9 +23,9 @@ for installation of this project in your system
 
 # Microservice Concepts used in Let's Review Hotels : 
 
-**Service Discovery.
+**Service Discovery.**
 
-**Feign Client.
+**Feign Client.**
 
 **API Gateway** is responsible for several tasks, including:
 
@@ -38,9 +38,9 @@ for installation of this project in your system
 
 **Circuit Breaker** (Resillience4j) to handle Fault Tolerance (in which requested service is down). Resillience4j provides us three modules Circuit Breaker , Retry, and RateLimiter.
 
-**Okta for authentcation and authorization.
+**Okta for authentcation and authorization.**
 
-**Feign Client/RestTemplate Interceptors.
+**Feign Client/RestTemplate Interceptors.**
 
 # Project Description
 
@@ -56,4 +56,4 @@ Overall, the Let's Review Hotels project provides a practical example of how to 
 
 # Future Enhancements
 
-We can enhance this project by incorporating various cutting-edge technologies, such as **Docker, Kubernetes, Kafka, and AWS.
+We can enhance this project by incorporating various cutting-edge technologies, such as **Docker, Kubernetes, Kafka, and AWS.**
